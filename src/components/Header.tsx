@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center justify-center w-80 h-80 mt-10 -ml-12">
-            <img src="/public/logo.jpg" alt="Wynyard Street Motors" className="w-full h-full object-contain" />
+            <img src="/logo.jpg" alt="Wynyard Street Motors" className="w-full h-full object-contain" />
           </div>
 
           {/* Desktop Navigation */}
