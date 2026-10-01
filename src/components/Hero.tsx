@@ -15,15 +15,15 @@ const Hero = () => {
           <div>
             <div className="mb-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-[#d91c1c]">
               <ShieldCheck className="h-5 w-5" />
-              Devonport · MTA Assured
+              MTA Assured · Devonport
             </div>
             <h1 className="max-w-3xl text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              A local mechanic you can{' '}
-              <span className="text-[#d91c1c]">call with confidence.</span>
+              Your local workshop in{' '}
+              <span className="text-[#d91c1c]">Devonport.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-              WOFs, batteries, servicing, repairs, and brakes from an MTA Assured
-              workshop in the heart of Devonport.
+              WOF inspections, batteries, servicing, mechanical repairs and brakes
+              at 1 Wynyard Street.
             </p>
 
             <div className="mt-8 grid max-w-xl gap-3 sm:grid-cols-2">
@@ -50,7 +50,7 @@ const Hero = () => {
                   <span className="block text-xs font-bold uppercase tracking-[0.12em] text-white/55">
                     Book online
                   </span>
-                  <span className="mt-0.5 block text-lg font-black">Choose a time</span>
+                  <span className="mt-0.5 block text-lg font-black">Book a service</span>
                 </span>
               </a>
             </div>
@@ -83,7 +83,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <p className="font-black text-[#202020]">MTA Assured</p>
-                  <p className="text-sm text-slate-600">Professional automotive service</p>
+                  <p className="text-sm text-slate-600">Wynyard Street Motors, Devonport</p>
                 </div>
               </div>
             </div>

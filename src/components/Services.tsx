@@ -14,27 +14,27 @@ const Services = () => {
     {
       icon: ClipboardCheck,
       title: 'WOF inspections',
-      description: 'Vehicle inspections to help keep your car safe, compliant, and ready for the road.',
+      description: 'Straightforward WOF inspections from our Devonport workshop.',
     },
     {
       icon: Battery,
       title: 'Batteries',
-      description: 'Battery checks and replacement support to help keep your vehicle starting reliably.',
+      description: 'Battery testing and replacement when your car is slow to start or will not start.',
     },
     {
       icon: Settings,
       title: 'Servicing',
-      description: 'Routine vehicle servicing and maintenance focused on dependable everyday motoring.',
+      description: 'Regular servicing to keep your vehicle running as it should.',
     },
     {
       icon: Wrench,
       title: 'Mechanical repairs',
-      description: 'Practical fault-finding and mechanical repair work for a wide range of vehicle issues.',
+      description: 'Fault finding and mechanical repairs for everyday vehicle problems.',
     },
     {
       icon: Disc3,
       title: 'Brakes',
-      description: 'Brake inspections and repairs to support confident, safe stopping performance.',
+      description: 'Brake inspections and repairs when something does not feel or sound right.',
     },
   ];
 
@@ -43,14 +43,13 @@ const Services = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d91c1c]">
-            Our mechanic services
+            Workshop services
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
-            The work we do every day.
+            WOFs, servicing and repairs.
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Clear, practical help with the essential work that keeps your vehicle
-            safe and dependable.
+            Available from our workshop at 1 Wynyard Street, Devonport.
           </p>
         </div>
 
@@ -71,8 +70,10 @@ const Services = () => {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-xl border border-stone-300 bg-white px-6 py-7 shadow-sm sm:flex-row sm:px-8">
           <div>
-            <p className="text-xl font-black text-slate-900">Not sure what your vehicle needs?</p>
-            <p className="mt-1 text-slate-600">Call for advice, or book directly if you already know.</p>
+            <p className="text-xl font-black text-slate-900">Want to discuss an issue?</p>
+            <p className="mt-1 text-slate-600">
+              Call the workshop, or book online for a WOF, service or planned visit.
+            </p>
           </div>
           <div className="grid w-full gap-3 sm:w-auto sm:grid-cols-2">
             <a
@@ -80,7 +81,7 @@ const Services = () => {
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#d91c1c] px-6 py-3 font-bold text-white transition-colors hover:bg-[#b91616]"
             >
               <Phone className="h-5 w-5" />
-              Call
+              Call the workshop
             </a>
             <a
               href={business.bookingUrl}
@@ -89,7 +90,7 @@ const Services = () => {
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#202020] px-6 py-3 font-bold text-white transition-colors hover:bg-black"
             >
               <CalendarDays className="h-5 w-5" />
-              Book
+              Book online
             </a>
           </div>
         </div>

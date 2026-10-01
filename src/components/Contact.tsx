@@ -7,14 +7,13 @@ const Contact = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d91c1c]">
-            Contact Wynyard Street Motors
+            Contact
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
-            Visit, call, or book online.
+            Find us in Devonport.
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Find the workshop at 1 Wynyard Street in Devonport, or call the team to
-            discuss what your vehicle needs.
+            The workshop is at 1 Wynyard Street. Call 09 445 1357 or book online.
           </p>
         </div>
 

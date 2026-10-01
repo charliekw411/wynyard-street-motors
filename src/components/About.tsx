@@ -21,30 +21,32 @@ const About = () => {
             </div>
             <div>
               <p className="font-black text-white">MTA Assured</p>
-              <p className="text-sm leading-5 text-white/60">A recognised standard of automotive professionalism.</p>
+              <p className="text-sm leading-5 text-white/60">
+                Wynyard Street Motors, Devonport
+              </p>
             </div>
           </div>
         </div>
 
         <div className="pt-8 lg:pl-8 lg:pt-0">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d91c1c]">
-            About the workshop
+            About
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
-            Local automotive care, right here in Devonport.
+            An MTA Assured workshop in Devonport.
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Wynyard Street Motors provides practical vehicle care from our workshop at
-            {` ${business.address}`}. Whether your car needs a WOF, regular servicing,
-            repair work, a battery, or brake attention, our team is ready to help.
+            Wynyard Street Motors is at {business.address}. The workshop provides
+            WOF inspections, batteries, servicing, mechanical repairs and brake work.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               'WOF inspections',
-              'Batteries and servicing',
+              'Batteries',
+              'Servicing',
               'Mechanical repairs',
-              'Brake inspections and repairs',
+              'Brakes',
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 font-semibold text-slate-800">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-[#d91c1c]" />
