@@ -1,66 +1,97 @@
-import { Wind, Zap, Battery, Disc } from 'lucide-react';
+import {
+  Battery,
+  CalendarDays,
+  ClipboardCheck,
+  Disc3,
+  Phone,
+  Settings,
+  Wrench,
+} from 'lucide-react';
+import { business } from '../business';
 
 const Services = () => {
   const services = [
     {
-      icon: Wind,
-      title: "Air and Cabin Filter Replacement",
-      description: "Ensure your vehicle's air quality and performance by regularly replacing air and cabin filters. Breathe easier and enjoy a clean, comfortable ride.",
-      image: "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      icon: Zap,
-      title: "Vehicle Engine Diagnostic",
-      description: "We employ cutting-edge diagnostic tools to pinpoint engine issues quickly and accurately, saving you time and money on repairs.",
-      image: "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=600"
+      icon: ClipboardCheck,
+      title: 'WOF inspections',
+      description: 'Vehicle inspections to help keep your car safe, compliant, and ready for the road.',
     },
     {
       icon: Battery,
-      title: "Battery Services",
-      description: "Don't get stranded with a dead battery. We offer battery testing, replacement, and maintenance services to keep your vehicle reliable.",
-      image: "https://images.pexels.com/photos/4489741/pexels-photo-4489741.jpeg?auto=compress&cs=tinysrgb&w=600"
+      title: 'Batteries',
+      description: 'Battery checks and replacement support to help keep your vehicle starting reliably.',
     },
     {
-      icon: Disc,
-      title: "Brake Repairs",
-      description: "Safety is paramount. Trust us for expert brake inspections and repairs, ensuring your vehicle stops effectively when you need it to.",
-      image: "https://images.pexels.com/photos/4489775/pexels-photo-4489775.jpeg?auto=compress&cs=tinysrgb&w=600"
-    }
+      icon: Settings,
+      title: 'Servicing',
+      description: 'Routine vehicle servicing and maintenance focused on dependable everyday motoring.',
+    },
+    {
+      icon: Wrench,
+      title: 'Mechanical repairs',
+      description: 'Practical fault-finding and mechanical repair work for a wide range of vehicle issues.',
+    },
+    {
+      icon: Disc3,
+      title: 'Brakes',
+      description: 'Brake inspections and repairs to support confident, safe stopping performance.',
+    },
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Key Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From routine maintenance to complex repairs, we provide comprehensive automotive services 
-            to keep your vehicle running safely and efficiently.
+    <section id="services" className="scroll-mt-32 bg-[#f5f3ef] py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d91c1c]">
+            Our mechanic services
+          </p>
+          <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+            The work we do every day.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Clear, practical help with the essential work that keeps your vehicle
+            safe and dependable.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="flex h-full flex-col rounded-xl border border-stone-300 border-t-4 border-t-[#d91c1c] bg-white p-7 shadow-sm"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 left-4 bg-red-600 p-3 rounded-lg">
-                  <service.icon className="h-6 w-6 text-white" />
-                </div>
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-red-50 text-[#d91c1c]">
+                <service.icon className="h-7 w-7" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
-              </div>
-            </div>
+              <h3 className="mt-6 text-2xl font-black text-slate-900">{service.title}</h3>
+              <p className="mt-3 flex-1 leading-7 text-slate-600">{service.description}</p>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-xl border border-stone-300 bg-white px-6 py-7 shadow-sm sm:flex-row sm:px-8">
+          <div>
+            <p className="text-xl font-black text-slate-900">Not sure what your vehicle needs?</p>
+            <p className="mt-1 text-slate-600">Call for advice, or book directly if you already know.</p>
+          </div>
+          <div className="grid w-full gap-3 sm:w-auto sm:grid-cols-2">
+            <a
+              href={business.phoneHref}
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#d91c1c] px-6 py-3 font-bold text-white transition-colors hover:bg-[#b91616]"
+            >
+              <Phone className="h-5 w-5" />
+              Call
+            </a>
+            <a
+              href={business.bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#202020] px-6 py-3 font-bold text-white transition-colors hover:bg-black"
+            >
+              <CalendarDays className="h-5 w-5" />
+              Book
+            </a>
+          </div>
         </div>
       </div>
     </section>

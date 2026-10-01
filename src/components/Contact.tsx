@@ -1,176 +1,110 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
-import { MapPin, Phone, Clock, Mail, Send } from 'lucide-react';
+import { CalendarDays, ExternalLink, MapPin, Phone, ShieldCheck, Wrench } from 'lucide-react';
+import { business } from '../business';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have questions about our services or need to schedule an appointment? 
-            We're here to help and look forward to hearing from you.
+    <section id="contact" className="scroll-mt-32 bg-white py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d91c1c]">
+            Contact Wynyard Street Motors
+          </p>
+          <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+            Visit, call, or book online.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Find the workshop at 1 Wynyard Street in Devonport, or call the team to
+            discuss what your vehicle needs.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-red-100 p-3 rounded-lg">
-                    <MapPin className="h-6 w-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Address</h4>
-                    <p className="text-gray-600">1 Wynyard Street, Devonport 0624</p>
-                  </div>
+        <div className="grid overflow-hidden rounded-2xl border border-stone-300 shadow-lg shadow-black/10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="bg-[#202020] p-8 text-white sm:p-10 lg:p-12">
+            <h3 className="text-3xl font-black">Workshop details</h3>
+            <div className="mt-8 space-y-7">
+              <a
+                href={business.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-white/5"
+              >
+                <div className="mt-0.5 rounded-lg bg-white/10 p-3 text-[#ef4444]">
+                  <MapPin className="h-6 w-6" />
                 </div>
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.14em] text-white/45">Address</p>
+                  <p className="mt-1 text-lg font-semibold">{business.address}</p>
+                  <span className="mt-2 inline-flex items-center gap-1 text-sm text-[#fca5a5]">
+                    Open in Google Maps
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </span>
+                </div>
+              </a>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-red-100 p-3 rounded-lg">
-                    <Phone className="h-6 w-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <a href="tel:094451357" className="text-red-600 hover:underline">
-                      09 445 1357
-                    </a>
-                  </div>
+              <a
+                href={business.phoneHref}
+                className="flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-white/5"
+              >
+                <div className="mt-0.5 rounded-lg bg-white/10 p-3 text-[#ef4444]">
+                  <Phone className="h-6 w-6" />
                 </div>
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.14em] text-white/45">Phone</p>
+                  <p className="mt-1 text-lg font-semibold">{business.phoneDisplay}</p>
+                  <span className="mt-2 block text-sm text-[#fca5a5]">
+                    Call for current workshop hours
+                  </span>
+                </div>
+              </a>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-red-100 p-3 rounded-lg">
-                    <Clock className="h-6 w-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Business Hours</h4>
-                    <div className="text-gray-600 space-y-1">
-                      <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                      <p>Saturday: 8:00 AM - 12:00 PM</p>
-                      <p>Sunday: Closed</p>
-                    </div>
-                  </div>
+              <div className="flex items-start gap-4 p-2">
+                <div className="mt-0.5 rounded-lg bg-white/10 p-3 text-[#ef4444]">
+                  <Wrench className="h-6 w-6" />
                 </div>
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.14em] text-white/45">Services</p>
+                  <p className="mt-1 leading-7 text-white/80">{business.services.join(' · ')}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
+                <ShieldCheck className="h-6 w-6 shrink-0 text-[#ef4444]" />
+                <p className="font-bold">MTA Assured automotive workshop</p>
               </div>
             </div>
 
-            {/* Google Maps */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.8947!2d174.7985!3d-36.8285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47e3c4b1c4b1%3A0x1234567890abcdef!2s1%20Wynyard%20Street%2C%20Devonport%20Auckland%200624!5e0!3m2!1sen!2snz!4v1234567890123"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Wynyard Street Motors Location"
-              ></iframe>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <a
+                href={business.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-4 font-bold text-[#202020] transition-colors hover:bg-stone-100"
+              >
+                <Phone className="h-5 w-5" />
+                Call
+              </a>
+              <a
+                href={business.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#d91c1c] px-5 py-4 font-bold text-white transition-colors hover:bg-[#b91616]"
+              >
+                <CalendarDays className="h-5 w-5" />
+                Book
+              </a>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors"
-                  placeholder="09 123 4567"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors resize-none"
-                  placeholder="Tell us about your vehicle or service needs..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-              >
-                <Send className="h-5 w-5" />
-                <span>Send Message</span>
-              </button>
-            </form>
+          <div className="min-h-[430px] bg-[#f5f3ef] p-3 sm:p-5">
+            <iframe
+              src={business.mapEmbedUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '430px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={`${business.name} location`}
+              className="h-full w-full rounded-xl"
+            />
           </div>
         </div>
       </div>

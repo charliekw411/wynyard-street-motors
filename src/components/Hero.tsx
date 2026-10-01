@@ -1,79 +1,130 @@
-import { ArrowRight, Calendar } from 'lucide-react';
+import {
+  CalendarDays,
+  MapPin,
+  Phone,
+  ShieldCheck,
+  Wrench,
+} from 'lucide-react';
+import { business } from '../business';
 
 const Hero = () => {
-  const scrollToServices = () => {
-    const element = document.getElementById('services');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleBookService = () => {
-    window.open('https://booking.auxosoftware.com/H4TyCPwY+kGhz8PCxyuhNA==', '_blank');
-  };
-
   return (
-    <section id="home" className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Reliable Local Mechanics in 
-                <span className="text-gray-900"> Devonport</span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Your trusted automotive service center providing quality repairs, maintenance, 
-                and inspections with transparency and expertise.
-              </p>
+    <section id="home" className="scroll-mt-32 overflow-hidden bg-[#f5f3ef] text-[#202020]">
+      <div className="relative">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-14 sm:px-6 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
+          <div>
+            <div className="mb-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-[#d91c1c]">
+              <ShieldCheck className="h-5 w-5" />
+              Devonport · MTA Assured
+            </div>
+            <h1 className="max-w-3xl text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              A local mechanic you can{' '}
+              <span className="text-[#d91c1c]">call with confidence.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              WOFs, batteries, servicing, repairs, and brakes from an MTA Assured
+              workshop in the heart of Devonport.
+            </p>
+
+            <div className="mt-8 grid max-w-xl gap-3 sm:grid-cols-2">
+              <a
+                href={business.phoneHref}
+                className="flex min-h-16 items-center gap-3 rounded-xl bg-[#d91c1c] px-5 py-3 text-white transition-colors hover:bg-[#b91616]"
+              >
+                <Phone className="h-6 w-6 shrink-0" />
+                <span>
+                  <span className="block text-xs font-bold uppercase tracking-[0.12em] text-white/65">
+                    Call the workshop
+                  </span>
+                  <span className="mt-0.5 block text-lg font-black">{business.phoneDisplay}</span>
+                </span>
+              </a>
+              <a
+                href={business.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-16 items-center gap-3 rounded-xl bg-[#202020] px-5 py-3 text-white transition-colors hover:bg-black"
+              >
+                <CalendarDays className="h-6 w-6 shrink-0" />
+                <span>
+                  <span className="block text-xs font-bold uppercase tracking-[0.12em] text-white/55">
+                    Book online
+                  </span>
+                  <span className="mt-0.5 block text-lg font-black">Choose a time</span>
+                </span>
+              </a>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={handleBookService}
-                className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
-              >
-                <Calendar className="h-5 w-5" />
-                <span>Book a Service</span>
-              </button>
-              <button 
-                onClick={scrollToServices}
-                className="border-2 border-red-600 text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>View Services</span>
-                <ArrowRight className="h-5 w-5" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600">15+</div>
-                <div className="text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600">500+</div>
-                <div className="text-gray-600">Happy Customers</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600">100%</div>
-                <div className="text-gray-600">MTA Assured</div>
-              </div>
-            </div>
+            <a
+              href={business.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 font-semibold text-slate-600 transition-colors hover:text-[#d91c1c]"
+            >
+              <MapPin className="h-5 w-5 text-[#d91c1c]" />
+              {business.address}
+            </a>
           </div>
 
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-              <img 
-                src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Professional mechanic working on car engine"
-                className="w-full h-80 object-cover rounded-lg"
+            <div className="relative overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-xl shadow-black/10">
+              <img
+                src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Mechanic inspecting a vehicle engine"
+                className="h-[360px] w-full object-cover sm:h-[430px]"
               />
-              <div className="mt-6 text-center">
-                <h3 className="text-xl font-semibold text-gray-900">Professional Service</h3>
-                <p className="text-gray-600 mt-2">Expert mechanics you can trust</p>
+              <div className="flex items-center gap-4 border-t border-slate-200 bg-white p-4 text-slate-900">
+                <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-slate-200 bg-white p-1">
+                  <img
+                    src="/mta-assured.jpg"
+                    alt="MTA Assured"
+                    className="h-full w-full rounded-md object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-black text-[#202020]">MTA Assured</p>
+                  <p className="text-sm text-slate-600">Professional automotive service</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="border-y border-stone-200 bg-white">
+        <div className="mx-auto grid max-w-7xl divide-y divide-stone-200 px-4 sm:px-6 md:grid-cols-3 md:divide-x md:divide-y-0 lg:px-8">
+          <a
+            href={business.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-4 py-5 transition-colors hover:bg-stone-50 md:px-6"
+          >
+            <MapPin className="h-6 w-6 shrink-0 text-[#d91c1c]" />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Find us</p>
+              <p className="mt-1 font-semibold text-slate-800">{business.address}</p>
+            </div>
+          </a>
+          <a
+            href={business.phoneHref}
+            className="flex items-center gap-4 py-5 transition-colors hover:bg-stone-50 md:px-6"
+          >
+            <Phone className="h-6 w-6 shrink-0 text-[#d91c1c]" />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Call the workshop</p>
+              <p className="mt-1 font-semibold text-slate-800">{business.phoneDisplay}</p>
+            </div>
+          </a>
+          <a
+            href="#services"
+            className="flex items-center gap-4 py-5 transition-colors hover:bg-stone-50 md:px-6"
+          >
+            <Wrench className="h-6 w-6 shrink-0 text-[#d91c1c]" />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">What we do</p>
+              <p className="mt-1 font-semibold text-slate-800">{business.services.join(' · ')}</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>

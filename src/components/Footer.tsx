@@ -1,5 +1,5 @@
-import React from 'react';
-import { Wrench, Phone, MapPin, Clock } from 'lucide-react';
+import { CalendarDays, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { business } from '../business';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -10,84 +10,90 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Quick Links */}
+    <footer className="bg-[#171717] text-white">
+      <div className="h-1.5 bg-[#d91c1c]" />
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-[1.35fr_0.7fr_1fr]">
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-400 hover:text-red-400 transition-colors"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="text-gray-400 hover:text-red-400 transition-colors"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-red-400 transition-colors"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-400 hover:text-red-400 transition-colors"
-                >
-                  Contact
-                </button>
-              </li>
+            <img
+              src="/logo.png"
+              alt={business.name}
+              className="h-auto w-full max-w-[330px]"
+            />
+            <p className="mt-5 max-w-md leading-7 text-white/65">
+              Local automotive care in Devonport for WOFs, batteries, servicing,
+              repairs, and brakes.
+            </p>
+            <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white/70">
+              <ShieldCheck className="h-4 w-4" />
+              MTA Assured
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-black uppercase tracking-[0.16em] text-[#ef4444]">
+              Quick links
+            </h4>
+            <ul className="mt-5 space-y-3">
+              {[
+                ['Home', 'home'],
+                ['Services', 'services'],
+                ['Bookings', 'bookings'],
+                ['About us', 'about'],
+                ['Contact', 'contact'],
+              ].map(([label, sectionId]) => (
+                <li key={sectionId}>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection(sectionId)}
+                    className="text-white/65 transition-colors hover:text-white"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
-          {/* Contact Info */}
+
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-red-400" />
-                <span className="text-gray-400">1 Wynyard Street, Devonport 0624</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-red-400" />
-                <a href="tel:094451357" className="text-gray-400 hover:text-red-400 transition-colors">
-                  09 445 1357
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Clock className="h-5 w-5 text-red-400" />
-                <span className="text-gray-400">Mon-Fri: 8AM-5PM</span>
-              </div>
+            <h4 className="text-sm font-black uppercase tracking-[0.16em] text-[#ef4444]">
+              Contact
+            </h4>
+            <div className="mt-5 space-y-5">
+              <a
+                href={business.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-3 text-white/65 transition-colors hover:text-white"
+              >
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#ef4444]" />
+                {business.address}
+              </a>
+              <a
+                href={business.phoneHref}
+                className="flex items-center gap-3 text-white/65 transition-colors hover:text-white"
+              >
+                <Phone className="h-5 w-5 shrink-0 text-[#ef4444]" />
+                {business.phoneDisplay}
+              </a>
+              <a
+                href={business.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#d91c1c] px-5 py-3 font-bold text-white transition-colors hover:bg-[#b91616]"
+              >
+                <CalendarDays className="h-4 w-4" />
+                Book online
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2025 Wynyard Street Motors. All rights reserved.
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-7 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <div className="flex items-center space-x-5 mt-4 md:mt-0">
-            <span className="text-gray-400 text-sm"></span>
-            {/* Placeholder for MTA Assured badge */}
-            <div className="w-20 h-20">
-              <img
-                src="/public/mta-assured.jpg"
-                alt="MTA Assured"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-          </div>
+          <p>{business.services.join(' · ')}</p>
         </div>
       </div>
     </footer>
