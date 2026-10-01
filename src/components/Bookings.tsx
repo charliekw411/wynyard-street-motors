@@ -7,14 +7,14 @@ const Bookings = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d91c1c]">
-            Get in touch
+            Contact the workshop
           </p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
-            Choose the option that suits you.
+            Call or book online.
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Speak directly with the workshop when you need advice, or book online
-            when you are ready to choose a service and time.
+            Call if you want to talk through an issue. For a WOF, service or planned
+            workshop visit, use the online booking form.
           </p>
         </div>
 
@@ -25,8 +25,8 @@ const Bookings = () => {
             </div>
             <h3 className="mt-6 text-3xl font-black text-slate-900">Call the workshop</h3>
             <p className="mt-4 flex-1 text-lg leading-8 text-slate-600">
-              Best when you are unsure what your car needs, have a fault to discuss,
-              or would rather speak with someone directly.
+              If you are not sure what to book, call the workshop and talk through
+              the issue.
             </p>
             <a
               href={business.phoneHref}
@@ -43,8 +43,8 @@ const Bookings = () => {
             </div>
             <h3 className="mt-6 text-3xl font-black text-slate-900">Book online</h3>
             <p className="mt-4 flex-1 text-lg leading-8 text-slate-600">
-              Best for planned servicing or repair work when you already know what
-              you need and want to choose a suitable appointment time.
+              Use the online booking form for a WOF, service or planned workshop
+              visit.
             </p>
             <a
               href={business.bookingUrl}
@@ -52,7 +52,7 @@ const Bookings = () => {
               rel="noreferrer"
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-[#202020] px-7 py-4 text-lg font-bold text-white transition-colors hover:bg-black"
             >
-              Book a service
+              Open online booking
               <ExternalLink className="h-5 w-5" />
             </a>
           </article>

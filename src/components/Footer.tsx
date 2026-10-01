@@ -21,8 +21,7 @@ const Footer = () => {
               className="h-auto w-full max-w-[330px]"
             />
             <p className="mt-5 max-w-md leading-7 text-white/65">
-              Local automotive care in Devonport for WOFs, batteries, servicing,
-              repairs, and brakes.
+              MTA Assured workshop at 1 Wynyard Street, Devonport.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white/70">
               <ShieldCheck className="h-4 w-4" />
@@ -93,7 +92,7 @@ const Footer = () => {
           <p>
             © {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p>{business.services.join(' · ')}</p>
+          <p>{business.address}</p>
         </div>
       </div>
     </footer>
